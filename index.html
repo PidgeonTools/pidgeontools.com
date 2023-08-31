@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon - Pidgeon Tools</title>
+    <link
+      rel="icon"
+      href="https://go.pidgeontools.com/icon.png"
+      type="image/png"
+      sizes="300x300"
+    />
+    <style>
+      /* space-mono-regular - latin */
+      @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Space Mono";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/public/fonts/space-mono-v13-latin-regular.woff2")
+          format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      }
+
+      /* space-mono-700 - latin */
+      @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Space Mono";
+        font-style: normal;
+        font-weight: 700;
+        src: url("/public/fonts/space-mono-v13-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      }
+
+      body {
+        background-color: black;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .content {
+        text-align: center;
+        position: relative;
+      }
+
+      .pidgeon {
+        animation: pidgeon-animation 4s ease infinite;
+        width: 12rem;
+        height: 12rem;
+      }
+
+      @keyframes pidgeon-animation {
+        0%,
+        100% {
+          color: white;
+        }
+
+        50% {
+          color: rgba(255, 255, 255, 0.4);
+          transform: scale(0.85);
+        }
+      }
+
+      @keyframes text-animation {
+        0%,
+        100% {
+          color: white;
+        }
+
+        50% {
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      h1 {
+        font-family: "Space Mono", monospace;
+        font-size: 2rem;
+        padding: 0rem 1rem;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: -35vh;
+        transition: all 1s ease;
+        animation: text-animation 4s ease infinite;
+      }
+
+      .coming-soon-active {
+        animation: none !important;
+      }
+
+      h1:hover,
+      .coming-soon-active {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        color: black !important;
+      }
+
+      h1:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1 class="coming-soon" data-text="COMING SOON">COMING SOON</h1>
+        <svg
+          width="750"
+          height="750"
+          version="1.1"
+          viewBox="0 0 198.44 198.44"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="pidgeon"
+        >
+          <g fill="currentColor">
+            <path
+              transform="scale(.26458)"
+              d="m321.28 115.13c-36.749 2.4781-72.249 20.084-96.461 47.84-21.619 24.784-34.111 57.355-34.615 90.238-8.319 11.589-17.708 22.411-28.006 32.283-17.12 16.413-36.674 30.138-53.676 46.674-8.9604 8.7151-17.29 18.35-22.596 29.668-4.06 8.6603-6.2588 18.186-6.4043 27.75 34.842-19.667 76.144-27.66 115.81-22.414 13.758 1.8197 27.514 5.2677 39.492 12.275 18.667 10.921 31.614 29.707 40.025 49.631 12.495 29.596 16.093 62.892 10.141 94.461-3.356 17.8-9.6345 34.898-15.891 51.896l-64.248 174.57h64.35l27.188-70.498c17.735-45.988 35.026-92.337 45.896-140.41 4.5344-20.053 8.0124-40.516 7.3906-61.066-0.43916-14.514-2.9356-28.963-7.3906-42.783 35.228 9.4372 74.321 3.3542 105.02-16.338 15.863-10.177 29.497-23.808 39.674-39.672l27.615 120.58c1.8804 7.2734 5.6718 14.043 10.891 19.447 3.2742 3.3903 7.1305 6.2632 11.463 8.1191 4.3324 1.856 9.1535 2.6654 13.818 1.9922 4.0402-0.58301 7.8912-2.2663 11.193-4.666 3.3021-2.3997 6.066-5.5024 8.2559-8.9473 6.3064-9.9209 7.642-22.836 3.5-33.838l-54.453-212.37 82.846 65.344c3.8774 3.6839 9.4914 5.4569 14.781 4.668 5.4583-0.81406 10.359-4.2488 13.459-8.8144 3.1001-4.5657 4.4818-10.171 4.4336-15.689-0.0874-10.016-4.9491-19.886-12.836-26.061l-155.97-122.91 84.791-2.334c3.0778 0.62747 6.4078-0.0967 8.9473-1.9453 1.5674-1.141 2.827-2.68 3.7207-4.4004 0.89372-1.7204 1.4265-3.6195 1.6523-5.5449 0.4517-3.8509-0.31003-7.7521-1.4844-11.447-2.4153-7.6002-6.7562-14.783-13.225-19.447-4.3116-3.109-9.4812-5.0139-14.779-5.4453zm28.246 53.732c8.378-0.0199 16.768 1.0052 24.928 2.9238 20.426 4.803 39.521 15.286 54.352 30.131 14.83 14.845 25.321 34.026 29.562 54.576 2.7801 13.471 2.8962 27.534-0.10156 40.959-2.9978 13.425-9.142 26.189-18.105 36.623-16.32 18.997-41.464 29.34-66.498 30.082-26.361 0.78141-52.873-8.7137-72.82-25.965s-33.154-42.074-36.428-68.242c-1.9737-15.776-0.40624-32.064 5.1894-46.945 5.5957-14.882 15.282-28.3 28.061-37.76 10.779-7.9799 23.604-13.059 36.846-15.186 4.9658-0.79744 9.9888-1.1853 15.016-1.1973z"
+            />
+            <path
+              d="m82.945 78.337c-2.0151-2.6355-3.4149-5.7719-3.8191-9.0648-0.40419-3.2929 0.2189-6.7369 1.934-9.5769 1.4404-2.3851 3.6202-4.2997 6.1278-5.5145s5.332-1.7381 8.1152-1.607c3.8682 0.18215 7.6624 1.6359 10.677 4.0659 3.0151 2.4301 5.2385 5.8214 6.2885 9.5488 1.1527 4.092 0.84979 8.6653-1.2567 12.358-1.4836 2.6007-3.8172 4.693-6.5292 5.9618s-5.7877 1.7205-8.7611 1.3692c-5.0449-0.59603-9.6913-3.5049-12.777-7.5404z"
+            />
+            <path
+              d="m198.44 187.83c-6.6021-4.5532-12.494-10.134-17.397-16.481-3.6878-4.773-6.8188-9.9784-9.2756-15.487-2.5416-5.6987-4.3536-11.694-5.9629-17.723-0.74777-2.8013-1.4534-5.6144-2.0704-8.4474-2.0262-9.3027-3.0965-18.815-5.6316-27.993-1.0515-3.8065-2.3527-7.5439-3.8925-11.18l-9.6822-8.2037 11.311 44.405c1.1668 4.36 0.71215 9.1344-1.2567 13.196-0.42353 0.87366-0.91418 1.7148-1.4662 2.5135 1.1399 4.2682 2.501 8.4774 4.0759 12.605 2.0022 5.2473 4.362 10.384 7.4536 15.073 3.1028 4.7058 6.9034 8.904 10.684 13.085 4.5888 5.0757 9.1714 10.157 13.748 15.244h9.3637z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script defer>
+      const generateRandomString = (length, prefix = "") => {
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let randomString = prefix;
+
+        for (let i = 0; i < length; i++) {
+          randomString += letters[Math.floor(Math.random() * 26)];
+        }
+
+        return randomString;
+      };
+
+      const hackerEffect = (targetNode) => {
+        let i = 0;
+        let prefix = "";
+
+        let targetString = targetNode.dataset.text;
+        targetNode.classList.add("coming-soon-active");
+
+        const interval = setInterval(() => {
+          if (i == targetString.length * 3) {
+            clearInterval(interval);
+            targetNode.classList.remove("coming-soon-active");
+            return;
+          }
+
+          if (i % 3 == 0) prefix += targetString[Math.floor(i / 3)];
+
+          let randomString = generateRandomString(
+            targetString.length - prefix.length,
+            prefix
+          );
+          targetNode.innerText =
+            randomString.slice(0, 6) + " " + randomString.slice(7);
+
+          i += 1;
+        }, 30);
+      };
+
+      document.querySelector(".coming-soon").onmouseover = (event) =>
+        hackerEffect(event.target);
+      document.querySelector(".coming-soon").onclick = (event) =>
+        window.open("https://go.pidgeontools.com/discord", "_blank").focus();
+    </script>
+  </body>
+</html>
